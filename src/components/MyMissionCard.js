@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function MyMissionCard({mission}) {
+function MyMissionCard({ mission }) {
   return (
-    <div className='my-mission-card border border-1  text-2xl ps-4 py-5 '>
-        {mission.name}
+    <div className="my-mission-card border border-1  text-2xl ps-4 py-5 ">
+      {mission.name}
     </div>
-  )
+  );
 }
 
-export default MyMissionCard
+MyMissionCard.propTypes = {
+  mission: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export default MyMissionCard;

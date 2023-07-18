@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function MyRocketCard ({rocket}) {
+function MyRocketCard({ rocket }) {
   return (
-    <div className='my-rocket-card border border-1 py-5 text-2xl ps-4 '>
-        {rocket.name}
+    <div className="my-rocket-card border border-1 py-5 text-2xl ps-4 ">
+      {rocket.name}
     </div>
-  )
+  );
 }
 
-export default MyRocketCard
+MyRocketCard.propTypes = {
+  rocket: PropTypes.objectOf(PropTypes.string).isRequired,
+};
+
+export default MyRocketCard;

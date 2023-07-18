@@ -8,8 +8,10 @@ function Rockets() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchRockets());
-  }, [dispatch]);
+    if(rockets.length === 0) {
+      dispatch(fetchRockets())
+    }
+  }, []);
   return (
     <div className="rocket-container">
       {rockets.map((rocket) => <RocketCard key={rocket.id} rocket={rocket} />)}

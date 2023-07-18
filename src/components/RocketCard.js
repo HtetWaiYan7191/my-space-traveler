@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/RocketCard.css';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { reservedRocket, cancelReserve } from '../redux/rocketSlice';
-import { useDispatch, useSelector } from 'react-redux';
 
 function RocketCard({ rocket }) {
   const dispatch = useDispatch();
@@ -21,9 +21,11 @@ function RocketCard({ rocket }) {
       <div className="rocket-data flex flex-col gap-3">
         <h2 className=" font-semibold text-2xl rocket-title">{rocket.name}</h2>
         <p className="rocket-description text-justify">
-          {rocket.reserved ? <span className=' text-white bg-green-500 px-2 rounded-sm'>Reserved</span> : rocket.description}
-          {rocket.reserved && ` ${rocket.description}`} {/* Display description if reserved */}
-        </p> 
+          {rocket.reserved ? <span className=" text-white bg-green-500 px-2 rounded-sm">Reserved</span> : rocket.description}
+          {rocket.reserved && ` ${rocket.description}`}
+          {' '}
+          {/* Display description if reserved */}
+        </p>
         <button
           type="button"
           onClick={handleClick}

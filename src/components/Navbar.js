@@ -8,7 +8,7 @@ function Navbar() {
     <nav className=" flex justify-between px-10 items-center border-b">
       <div className="logo-container flex text-4xl font-semibold align-middle items-center">
         <img src={planet} width="80px" height="80px" alt="logo" className="me-4" />
-        <h2>Space Travelers' Hub</h2>
+        <h2>Space Travelers&apos; Hub</h2>
       </div>
       <ul className="flex">
         <li className="me-2">
