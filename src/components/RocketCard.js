@@ -1,8 +1,18 @@
 import React from 'react';
 import '../styles/RocketCard.css';
 import PropTypes from 'prop-types';
+import { reservedRocket, cancelReserve } from '../redux/rocketSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 function RocketCard({ rocket }) {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    if (!rocket.reserved) {
+      dispatch(reservedRocket(rocket.id));
+    } else {
+      dispatch(cancelReserve(rocket.id));
+    }
+  };
   return (
     <div className="rocket-card flex gap-10 my-7 w-[80%] mx-auto">
       <figure className="img-container">
@@ -11,7 +21,18 @@ function RocketCard({ rocket }) {
       <div className="rocket-data flex flex-col gap-3">
         <h2 className=" font-semibold text-2xl rocket-title">{rocket.name}</h2>
         <p className="rocket-description text-justify">{rocket.description}</p>
-        <button type="button" className=" reserve-btn px-4 py-2 w-[20%] text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 ">Reserve Rocket</button>
+        <button
+          type="button"
+          onClick={handleClick}
+          className={
+            rocket.reserved
+              ? ' border border-2 text-gray-500 rounded-sm reserve-btn px-2 py-2 w-[20%]'
+              : 'reserve-btn px-4 py-2 w-[20%] text-white bg-blue-500 rounded-sm shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'
+          }
+        >
+          {!rocket.reserved ? 'Reserved' : 'Cancel Reservation'}
+        </button>
+
       </div>
     </div>
   );
