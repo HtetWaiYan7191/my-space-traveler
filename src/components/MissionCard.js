@@ -1,14 +1,16 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const MissionCard = ({mission}) => {
+const MissionCard = ({ mission }) => (
+  <div>
+    {mission.id}
+    {mission.name}
+    {mission.description}
+  </div>
+);
 
-  return (
-    <div>
-      {mission.id}
-      {mission.name}
-      {mission.description}
-    </div>
-  )
-}
+MissionCard.propTypes = {
+  mission: PropTypes.objectOf(PropTypes.string).isRequired,
+};
 
-export default MissionCard
+export default MissionCard;

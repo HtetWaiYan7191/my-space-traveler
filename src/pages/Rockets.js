@@ -11,8 +11,8 @@ function Rockets() {
     dispatch(fetchRockets());
   }, [dispatch]);
   return (
-    <div className='rocket-container'>
-        {rockets.map((rocket) => <RocketCard key={rocket.id} rocket={rocket}/>)}
+    <div className="rocket-container">
+      {rockets.map((rocket) => <RocketCard key={rocket.id} rocket={rocket} />)}
     </div>
   );
 }
