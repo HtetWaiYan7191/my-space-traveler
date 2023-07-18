@@ -11,9 +11,15 @@ function Missions() {
     dispatch(fetchMissions());
   }, [dispatch]);
   return (
-    <div className="mission-container">
+    <table className="mission-container border border-1 w-[80%] mx-auto my-10">
+        <tr className='header-table'>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
       {missions.map((mission) => <MissionCard key={mission.id} mission={mission} />)}
-    </div>
+    </table>
   );
 }
 
