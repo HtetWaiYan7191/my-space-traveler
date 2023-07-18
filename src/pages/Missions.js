@@ -8,8 +8,8 @@ function Missions() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(missions.length === 0) {
-        dispatch(fetchMissions());
+    if (missions.length === 0) {
+      dispatch(fetchMissions());
     }
   }, []);
   return (

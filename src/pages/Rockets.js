@@ -8,8 +8,8 @@ function Rockets() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if(rockets.length === 0) {
-      dispatch(fetchRockets())
+    if (rockets.length === 0) {
+      dispatch(fetchRockets());
     }
   }, []);
   return (
