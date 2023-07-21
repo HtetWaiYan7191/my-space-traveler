@@ -18,7 +18,7 @@ function Navbar() {
         <li className="me-2">
           <NavLink to="/missions">Missions</NavLink>
         </li>
-        <div className=' vertical-line me-2'></div>
+        <div className=" vertical-line me-2" />
         <li className="me-2">
           <NavLink to="/myprofile">My Profile</NavLink>
         </li>
